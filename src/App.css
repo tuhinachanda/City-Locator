@@ -17,7 +17,7 @@ body,
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1950&q=80');
+  background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1950&q=80');
   /* Diner style */
   background-size: cover;
   background-position: center;
@@ -82,7 +82,12 @@ button {
   justify-content: center;
 }
 
-button:hover {
+button:disabled {
+  background-color: #7baaf7;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
   background-color: #0056b3;
 }
 
@@ -104,6 +109,38 @@ button:hover {
   margin: 0.5rem 0;
   font-size: 1.1rem;
 }
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+  .container {
+    width: 90vw;
+    padding: 2rem 1.5rem;
+    max-width: none;
+    border-radius: 12px;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  input[type="text"] {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.75rem 0;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .result-card p {
+    font-size: 1rem;
+  }
+}
+
+
 
 
 
