@@ -162,6 +162,9 @@ button:hover:not(:disabled) {
     padding: 2rem 1.5rem;
     max-width: none;
     border-radius: 12px;
+
+    /* Fix to prevent input box being too small initially */
+    max-height: none !important;
   }
 
   .input-group {
@@ -185,7 +188,6 @@ button:hover:not(:disabled) {
     font-size: 1rem;
   }
 }
-
 
 
 
