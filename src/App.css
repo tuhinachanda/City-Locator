@@ -5,10 +5,13 @@ body,
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
   display: flex;
   justify-content: center;
   align-items: center;
+  /* Vertically center container */
   background: transparent;
+  min-height: 100vh;
 }
 
 .background {
@@ -17,8 +20,6 @@ body,
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1950&q=80');
-  /* Diner style */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -27,13 +28,25 @@ body,
 }
 
 .container {
+  margin: 2rem 1rem;
   background-color: rgba(255, 255, 255, 0.85);
   padding: 3rem 3rem;
   max-width: 600px;
+  width: 100%;
   border-radius: 16px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
   text-align: center;
   z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  min-height: 150px;
+  max-height: 150px;
+  overflow: hidden;
+
+  transition: max-height 0.5s ease, padding 0.5s ease;
 }
 
 .input-group {
@@ -42,9 +55,7 @@ body,
   border-radius: 12px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.9);
-  /* Light, nearly white background */
   backdrop-filter: blur(4px);
-  /* Optional soft blur */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.3s ease;
 }
@@ -80,6 +91,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 12px;
+  /* Rounded corners for button */
 }
 
 button:disabled {
@@ -103,11 +116,43 @@ button:hover:not(:disabled) {
   padding: 1rem 1.5rem;
   border-radius: 10px;
   box-shadow: inset 0 0 10px #ddd;
+  margin-bottom: 1rem;
 }
 
 .result-card p {
   margin: 0.5rem 0;
   font-size: 1.1rem;
+}
+
+.pin-codes {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px #ddd;
+  text-align: left;
+
+  max-height: 300px;
+  /* Limit max height */
+  overflow-y: auto;
+  /* Scroll if content is large */
+}
+
+.pin-codes h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.pin-codes ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pin-codes li {
+  margin: 0.4rem 0;
+  font-size: 1rem;
 }
 
 /* MOBILE RESPONSIVENESS */
@@ -133,12 +178,19 @@ button:hover:not(:disabled) {
     padding: 0.75rem 0;
     margin-top: 0.5rem;
     font-size: 1.1rem;
+    border-radius: 12px;
   }
 
   .result-card p {
     font-size: 1rem;
   }
 }
+
+
+
+
+
+
 
 
 
