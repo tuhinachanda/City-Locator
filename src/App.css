@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background: transparent;
 }
 
-.App-link {
-  color: #61dafb;
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ccc;
+  filter: brightness(0.75);
+  z-index: -1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.container {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  width: 90%;
+  overflow-y: auto;
+  max-height: 90vh;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+h1,
+h2 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #2c5aa0;
+  /* line under headings */
+  padding-bottom: 0.3rem;
+}
+
+p {
+  color: #333;
+  line-height: 1.6;
+  margin: 0.5rem 0;
+  word-wrap: break-word;
+}
+
+strong {
+  color: #222;
+}
+
+.error {
+  color: crimson;
+  font-weight: bold;
+}
+
+.leaflet-container {
+  width: 100% !important;
+  height: 300px !important;
+  border-radius: 12px;
+}
+
+.container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 8px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+    max-width: 95%;
+    max-height: 95vh;
   }
-  to {
-    transform: rotate(360deg);
+
+  /* Make the search form wrap */
+  form {
+    flex-wrap: wrap !important;
+  }
+
+  /* Search input full width on small */
+  form input[type="text"] {
+    width: 100% !important;
+    margin-bottom: 0.5rem;
+    border-radius: 12px !important;
+  }
+
+  /* Button full width on small */
+  form button {
+    width: 100% !important;
+    border-radius: 12px !important;
+  }
+
+  /* Smaller font size for headings on mobile */
+  h1,
+  h2 {
+    font-size: 1.4rem;
   }
 }
